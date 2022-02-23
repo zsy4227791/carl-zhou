@@ -144,10 +144,6 @@ Response
   | `formValues` | [FieldValue](#FieldValue-object)[]  | |  an array of [FieldValue](#FieldValue-object) objects |
   | `formId` | Guid  | |  |
  | `action` | string  | | submit, cancel |
-  ### Transferchat Object
-  |Name| Type | Default | Description | 
-  | - | - | :-: | - | 
-  | `action` | string  | | submit, cancel |
   
 ### FieldValue Object
 
