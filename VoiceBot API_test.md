@@ -182,7 +182,7 @@ Response
   |`VoicebotActionId` | Guid |  | Id of the Action.  |
   |`AudioPath` | String|  | String  |
   |`NextActionId` | Guid|  | Id of the  Next Action. |
- #### PlayText Object
+#### PlayText Object
   Text Response is represented as simple flat json objects with the following keys:
 
   |Name| Type| Default | Description     | 
@@ -190,7 +190,7 @@ Response
   |`VoicebotActionId` | Guid |  | Id of the Action.  |
   |`Message` | String|  | String  |
   |`NextActionId` | Guid|  | Id of the  Next Action. |
- #### ClearValue Object
+#### ClearValue Object
 Text Response is represented as simple flat json objects with the following keys:
 
   |Name| Type| Default | Description     | 
@@ -246,7 +246,7 @@ Text Response is represented as simple flat json objects with the following keys
   |`Id` | Guid |  | Id of the Condition Case.  |
   |`VoicebotActionConditionCaseConditions` | [VoicebotActionConditionCaseConditions[]](#VoicebotActionConditionCaseConditions-object) |  |   |
 
- #### VoicebotActionConditionCaseConditions Object
+#### VoicebotActionConditionCaseConditions Object
 Text Response is represented as simple flat json objects with the following keys:
 
   |Name| Type| Default | Description     | 
@@ -260,7 +260,7 @@ Text Response is represented as simple flat json objects with the following keys
   |`Items` | List |  | List  |
 
 
-  #### FieldName Object
+#### FieldName Object
 Text Response is represented as simple flat json objects with the following keys:
 
   |Name| Operator|
@@ -271,14 +271,92 @@ Text Response is represented as simple flat json objects with the following keys
   |`{!Visitor.Time Zone}` | isOneOf/isNotIn |
   |`{!Visitor.Language}` | is/isNot/contains/notContains/regularExpression |
   |`{!Visitor.CardId}` | is/isNot/contains/notContains/regularExpression |
-  #### TransferChat Object
+#### TransferChat Object
 Text Response is represented as simple flat json objects with the following keys:
 
   |Name| Type| Default | Description     | 
   | - | - | :-: | - | 
-  |`transferTo` | Guid |  |   |
-  |`isForce` | bool |  | must transfer chat  |
-  |`type` | string |  | type:`transferToAgent`,`transferToDepartment`  |
+  |`VoicebotActionId` | Guid |  |  Id of the Action. |
+  |`TransferTo` | String |  | String |
+  |`ActionIdWhenTransferFailed` | Guid |  | Guid  |
+
+#### EndCall Object
+Text Response is represented as simple flat json objects with the following keys:
+
+  |Name| Type| Default | Description     | 
+  | - | - | :-: | - | 
+  |`VoicebotActionId` | Guid |  |  Id of the Action. |
+  
+#### GoToIntent Object
+Text Response is represented as simple flat json objects with the following keys:
+
+  |Name| Type| Default | Description     | 
+  | - | - | :-: | - | 
+  |`VoicebotActionId` | Guid |  |  Id of the Action. |
+  |`IntentId` | Guid |  |  Id of the Intent. |
+
+#### IVRMenu Object
+Text Response is represented as simple flat json objects with the following keys:
+
+  |Name| Type| Default | Description     | 
+  | - | - | :-: | - | 
+  |`VoicebotActionId` | Guid |  |  Id of the Action. |
+  |`Message` | String |  |  String |
+  |`InvalidInputMessage` | String |  |  String |
+  |`InvalidInputRepeatTime` | Int |  |  Int |
+  |`ActionIdWhenInvalidInput` | Guid |  |  Guid |
+  |`VoicebotActionIVRMenuOptions` | [VoicebotActionIVRMenuOptions[]](#VoicebotActionIVRMenuOptions-object) |  |  List |
+  
+#### VoicebotActionIVRMenuOptions Object
+Text Response is represented as simple flat json objects with the following keys:
+
+  |Name| Type| Default | Description     | 
+  | - | - | :-: | - | 
+  |`Text` | String |  |  String |
+  |`Key` | Int |  |  Int |
+  |`NextActionId` | Guid |  |  Id of the Next Action. |
+  |`VoicebotActionId` | Int |  |   Id of the Action. |
+  |`Order` | Int |  |  Int |
+  
+#### SetVariableValue Object
+Text Response is represented as simple flat json objects with the following keys:
+
+  |Name| Type| Default | Description     | 
+  | - | - | :-: | - | 
+  |`VoicebotActionId` | Guid |  |  Id of the Action. |
+  |`Value` | String |  |  String |
+  |`SaveToType` | Type |  | Allowed values are "LiveChat", "CustomVariable", "Tick", "Variable". |
+  |`FieldId` | Guid |  |  Id of the Field |
+  |`Field` | [Field[]](#Field-object) |  |   |
+  |`CustomVariableId` | Guid |  | Id of the Custom Variable  |
+  |`CustomVariable` | [CustomVariable[]](#CustomVariable-object) |  |   |
+  |`TicketingFieldId` | Guid |  | Id of the Custom Ticket Field.  |
+  |`TicketingField` | [TicketingField[]](#TicketingField-object) |  |   |
+  |`Variable` | String |  |  String |
+
+#### Field Object
+Text Response is represented as simple flat json objects with the following keys:
+
+  |Name| Type| Default | Description     | 
+  | - | - | :-: | - | 
+  |`Id` | Guid |  |  Id of the Field. |
+  |`Name` | String |  |  Name of the Field. |
+ 
+#### CustomVariable Object
+Text Response is represented as simple flat json objects with the following keys:
+
+  |Name| Type| Default | Description     | 
+  | - | - | :-: | - | 
+  |`Id` | Guid |  |  Id of the CustomVariable. |
+  |`Name` | String |  |  Name of the CustomVariable. |
+  
+#### TicketingField Object
+Text Response is represented as simple flat json objects with the following keys:
+
+  |Name| Type| Default | Description     | 
+  | - | - | :-: | - | 
+  |`Id` | Guid |  |  Id of the TicketingField. |
+  |`Name` | String |  |  Name of the TicketingField. |
 
 ### Form Object
 FormReplyResponse is represented as simple flat json objects with the following keys:
